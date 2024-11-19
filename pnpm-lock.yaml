@@ -96,6 +96,9 @@ importers:
       '@tauri-apps/plugin-notification':
         specifier: 2.0.0
         version: link:../../plugins/notification
+      '@tauri-apps/plugin-opener':
+        specifier: 1.0.0
+        version: link:../../plugins/opener
       '@tauri-apps/plugin-os':
         specifier: 2.0.0
         version: link:../../plugins/os
@@ -244,6 +247,12 @@ importers:
         version: 2.1.1
 
   plugins/notification:
+    dependencies:
+      '@tauri-apps/api':
+        specifier: ^2.0.0
+        version: 2.1.1
+
+  plugins/opener:
     dependencies:
       '@tauri-apps/api':
         specifier: ^2.0.0

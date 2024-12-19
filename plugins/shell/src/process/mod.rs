@@ -80,13 +80,6 @@ impl CommandChild {
         Ok(())
     }
 
-    /// Return the child's exit status if it has already exited. If the child is
-    /// still running, return `Ok(None)`.
-    pub fn exit_status(&self) -> crate::Result<Option<ExitStatus>> {
-        let status = self.inner.try_wait()?;
-        Ok(status.map(|s| ExitStatus { code: s.code() }))
-    }
-
     /// Returns the process pid.
     pub fn pid(&self) -> u32 {
         self.inner.id()
